@@ -8,6 +8,7 @@
 
 package models
 
+// Facebook Messaging Event with Message Attached
 type Message struct {
 	Mid  string               `json:"mid"`
 	Text string               `json:"text,omitempty"`
@@ -16,19 +17,23 @@ type Message struct {
 	Attachments []*Attachment `json:"attachments,omitempty"`
 }
 
+// QuickReply Type with Message struct
 type QuickReply struct {
 	Payload string `json:"payload"`
 }
 
+// Object to represent if a message is a reply to someone
 type ReplyTo struct {
 	Mid string `json:"mid"`
 }
 
+// All the attachments given with the Message
 type Attachment struct {
 	Type    string            `json:"type"`
 	Payload AttachmentPayload `json:"payload"`
 }
 
+// Possible Attachment Payload
 type AttachmentPayload struct {
 	Url string 				 `json:"url,omitempty"`
 	Title string 			 `json:"title,omitempty"`
